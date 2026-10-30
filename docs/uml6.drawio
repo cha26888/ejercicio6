@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="uml" name="Diagrama de clases">
+    <mxGraphModel dx="1726" dy="1265" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="base" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;«abstract» IntegracionAPI&lt;/b&gt;&lt;hr&gt;- id: String&lt;br&gt;- proveedor: String&lt;br&gt;- endpoint: String&lt;br&gt;- conectado: boolean&lt;br&gt;- latenciaMs: int&lt;div&gt;+ IntegracionAPI(id: String, proveedor: String, endpoint: String, conectado: boolean, latenciaMs: int)&lt;br&gt;+ getId(): String&lt;br&gt;+ getProveedor(): String&lt;br&gt;+ getEndpoint(): String&lt;br&gt;+ getConectado(): boolean&lt;br&gt;+ getLatenciaMs(): int&lt;br&gt;+ setEndpoint(valor: String): void&lt;br&gt;+ setConectado(valor: boolean): void&lt;br&gt;+ setLatenciaMs(valor: int): void&lt;br&gt;+ getTipo(): String {abstract}&lt;br&gt;+ getConfiguracion(): String&lt;br&gt;+ compareTo(otra: IntegracionAPI): int&lt;br&gt;+ toString(): String&lt;br&gt;+ equals(obj: Object): boolean&lt;br&gt;+ hashCode(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="445" width="390" x="620" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="pay" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;APIPago&lt;/b&gt;&lt;hr&gt;- moneda: String&lt;br&gt;+ getTipo(): String&lt;div&gt;+ APIPago(id: String, proveedor: String, endpoint: String, conectado: boolean, latenciaMs: int, moneda: String)&lt;br&gt;+ getConfiguracion(): String&lt;br&gt;+ cobrar(double): String&lt;br&gt;+ reintegrar(double): String&lt;br&gt;+ consultarAuditoria(): String&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ͼv&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;ͼ11&quot;&gt;getMoneda&lt;/span&gt;(): &lt;span class=&quot;ͼ11&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="172" width="350" x="90" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="log" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;APILogistica&lt;/b&gt;&lt;hr&gt;- zonaCobertura: String&lt;div&gt;+ APILogistica(id: String, proveedor: String, endpoint: String, conectado: boolean, latenciaMs: int, zonaCobertura: String)&lt;br&gt;+ getTipo(): String&lt;br&gt;+ getConfiguracion(): String&lt;br&gt;+ generarDocumento(String): String&lt;br&gt;+ consultarAuditoria(): String&lt;br&gt;+ rastrear(guia: String): String&lt;br&gt;+ cotizar(destino: String): String&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ͼv&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;ͼ11&quot;&gt;getZonaCobertura&lt;/span&gt;(): &lt;span class=&quot;ͼ11&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="193" width="350" x="20" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="fel" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;APIFacturacion&lt;/b&gt;&lt;hr&gt;- nitCertificador: String&lt;div&gt;+ APIFacturacion(id: String, proveedor: String, endpoint: String, conectado: boolean, latenciaMs: int, nitCertificador: String)&lt;br&gt;+ getTipo(): String&lt;br&gt;+ getConfiguracion(): String&lt;br&gt;+ generarDocumento(String): String&lt;br&gt;+ consultarAuditoria(): String&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ͼv&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;ͼ11&quot;&gt;getNitCertificador&lt;/span&gt;(): &lt;span class=&quot;ͼ11&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="350" x="640" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="tr" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;«interface» Transaccional&lt;/b&gt;&lt;hr&gt;+ cobrar(&lt;span class=&quot;ͼ11&quot;&gt;monto&lt;/span&gt;: &lt;span class=&quot;ͼ11&quot;&gt;double&lt;/span&gt;): String&lt;br&gt;+ reintegrar(&lt;span class=&quot;ͼ11&quot;&gt;monto&lt;/span&gt;: &lt;span class=&quot;ͼ11&quot;&gt;double&lt;/span&gt;): String" vertex="1">
+          <mxGeometry height="88" width="350" x="90" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="doc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;«interface» Documentable&lt;/b&gt;&lt;hr&gt;+ generarDocumento(&lt;span class=&quot;ͼ11&quot;&gt;datos&lt;/span&gt;: String): String" vertex="1">
+          <mxGeometry height="67" width="350" x="20" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="aud" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;«interface» Auditable&lt;/b&gt;&lt;hr/&gt;+ consultarAuditoria(): String" vertex="1">
+          <mxGeometry height="67" width="350" x="90" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="cmp" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;«interface» Comparable&amp;lt;IntegracionAPI&amp;gt;&lt;/b&gt;&lt;hr/&gt;+ compareTo(otra: IntegracionAPI): int" vertex="1">
+          <mxGeometry height="67" width="420" x="605" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;ControladorIntegraciones&lt;/b&gt;&lt;hr&gt;- integraciones: ArrayList&amp;lt;IntegracionAPI&amp;gt;&lt;div&gt;+ ControladorIntegraciones()&lt;br&gt;+ registrar(api: IntegracionAPI): boolean&lt;br&gt;+ buscar(id: String): IntegracionAPI&lt;br&gt;+ listar(): String&lt;br&gt;+ ordenarPorLatencia(): void&lt;br&gt;+ procesarReintegro(servicio: Transaccional, monto: double): String&lt;br&gt;+ procesarReintegro(id: String, monto: double): String&lt;br&gt;+ procesarCobro(&lt;span class=&quot;ͼ11&quot;&gt;api&lt;/span&gt;: Transaccional, &lt;span class=&quot;ͼ11&quot;&gt;monto&lt;/span&gt;: &lt;span class=&quot;ͼ11&quot;&gt;double&lt;/span&gt;): String&lt;br&gt;+ procesarCobro(&lt;span class=&quot;ͼ11&quot;&gt;id&lt;/span&gt;: String, &lt;span class=&quot;ͼ11&quot;&gt;monto&lt;/span&gt;: &lt;span class=&quot;ͼ11&quot;&gt;double&lt;/span&gt;): String&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ͼv&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;ͼ11&quot;&gt;procesarCobro&lt;/span&gt;(&lt;span class=&quot;ͼ11&quot;&gt;api&lt;/span&gt;: Transaccional, &lt;span class=&quot;ͼ11&quot;&gt;monto&lt;/span&gt;: &lt;span class=&quot;ͼ11&quot;&gt;double&lt;/span&gt;, &lt;span class=&quot;ͼ11&quot;&gt;moneda&lt;/span&gt;: String): &lt;span class=&quot;ͼ11&quot;&gt;String&lt;/span&gt;&lt;br&gt;+ procesarDocumento(servicio: Documentable, referencia: String): String&lt;br&gt;+ procesarDocumento(id: String, referencia: String): String&lt;br&gt;+ consultarAuditoria(servicio: Auditable): String&lt;br&gt;+ consultarAuditoria(id: String): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="319" width="430" x="1250" y="393" as="geometry" />
+        </mxCell>
+        <mxCell id="main" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eef5fb;strokeColor=#35628a;fontSize=13;" value="&lt;b&gt;Principal «vista / driver»&lt;/b&gt;&lt;hr/&gt;- scanner: Scanner&lt;br/&gt;+ main(args: String[]): void&lt;br/&gt;Menú, entrada y salida por consola&lt;br/&gt;Única clase con System.out.println" vertex="1">
+          <mxGeometry height="130" width="430" x="1050" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="g0" edge="1" parent="1" source="pay" style="endArrow=block;endFill=0;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" edge="1" parent="1" source="log" style="endArrow=block;endFill=0;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" edge="1" parent="1" source="fel" style="endArrow=block;endFill=0;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r0" edge="1" parent="1" source="pay" style="endArrow=block;endFill=0;dashed=1;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="tr" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" source="pay" style="endArrow=block;endFill=0;dashed=1;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="aud" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" source="log" style="endArrow=block;endFill=0;dashed=1;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="doc" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" edge="1" parent="1" source="log" style="endArrow=block;endFill=0;dashed=1;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="aud" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" edge="1" parent="1" source="fel" style="endArrow=block;endFill=0;dashed=1;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="doc" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" edge="1" parent="1" source="fel" style="endArrow=block;endFill=0;dashed=1;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="aud" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" edge="1" parent="1" source="base" style="endArrow=block;endFill=0;dashed=1;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="cmp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="collection" edge="1" parent="1" source="ctrl" style="startArrow=diamond;startFill=0;endArrow=none;strokeWidth=2;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="1 catálogo / 0..* integraciones">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uses" edge="1" parent="1" source="main" style="dashed=1;endArrow=open;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="ctrl" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
